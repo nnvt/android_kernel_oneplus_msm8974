@@ -31,6 +31,18 @@ config IOSCHED_DEADLINE
 	  CSCAN service with FIFO expiration of requests, switching to
 	  a new point in the service tree and doing a batch of IO from there
 	  in case of expiry.
+	  
+config IOSCHED_SIO
+	tristate "SIO I/O scheduler"
+	default y
+	---help---
+	  SIO I/O scheduler
+	  
+config IOSCHED_FIOPS
+	tristate "FIOPS I/O scheduler"
+	default y
+	---help---
+	  FIOPS I/O scheduler
 
 config IOSCHED_ROW
 	tristate "ROW I/O scheduler"
@@ -128,6 +140,8 @@ endchoice
 config DEFAULT_IOSCHED
 	string
 	default "deadline" if DEFAULT_DEADLINE
+	default "sio" if DEFAULT_SIO
+	default "fiops" if DEFAULT_FIOPS
 	default "row" if DEFAULT_ROW
 	default "cfq" if DEFAULT_CFQ
 	default "bfq" if DEFAULT_BFQ
