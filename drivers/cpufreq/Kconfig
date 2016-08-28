@@ -114,6 +114,12 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
 	select CPU_FREQ_GOV_INTELLIDEMAND
 	help
 	  IntelliDemand
+	  
+config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
+	bool "pegasusq"
+	select CPU_FREQ_GOV_PEGASUSQ
+	help
+	  IntelliDemand
 
 config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	bool "intelliactive"
@@ -139,6 +145,11 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 	tristate "'intellidemand' governor"
 	help
 	  IntelliDemand
+	  
+config CPU_FREQ_GOV_PEGASUSQ
+	tristate "'pegasusq' governor"
+	help
+	  PegasusQ
 	  
 config CPU_FREQ_GOV_INTELLIACTIVE
 	tristate "'intelliactive' governor"
