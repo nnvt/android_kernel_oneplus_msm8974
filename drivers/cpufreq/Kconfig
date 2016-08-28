@@ -119,7 +119,13 @@ config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
 	bool "pegasusq"
 	select CPU_FREQ_GOV_PEGASUSQ
 	help
-	  IntelliDemand
+	  PegasusQ
+	  
+config CPU_FREQ_DEFAULT_GOV_SMARTMAX
+	bool "smartmax"
+	select CPU_FREQ_GOV_SMARTMAX
+	help
+	  SmartMax
 
 config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
 	bool "intelliactive"
@@ -150,6 +156,11 @@ config CPU_FREQ_GOV_PEGASUSQ
 	tristate "'pegasusq' governor"
 	help
 	  PegasusQ
+	  
+config CPU_FREQ_GOV_SMARTMAX
+	tristate "'smartmax' governor"
+	help
+	  SmartMax
 	  
 config CPU_FREQ_GOV_INTELLIACTIVE
 	tristate "'intelliactive' governor"
