@@ -115,6 +115,12 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
 	help
 	  IntelliDemand
 
+config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
+	bool "intelliactive"
+	select CPU_FREQ_GOV_INTELLIACTIVE
+	help
+	  IntelliActive
+
 
 endchoice
 
@@ -133,6 +139,11 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 	tristate "'intellidemand' governor"
 	help
 	  IntelliDemand
+	  
+config CPU_FREQ_GOV_INTELLIACTIVE
+	tristate "'intelliactive' governor"
+	help
+	  IntelliActive
 
 config CPU_FREQ_GOV_POWERSAVE
 	tristate "'powersave' governor"
